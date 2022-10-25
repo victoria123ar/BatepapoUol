@@ -1,0 +1,213 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .chat{
+    max-width: 650px;
+  }
+
+  header{
+    height: 80px;
+    width:650px;
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    box-shadow: 0 0 15px -4px rgba(0, 0, 0, 0.25);
+  }
+
+  header > img{
+    margin-left: 20px;
+  }
+
+  header > .icone{
+    font-size: 45px;
+    margin-right: 20px;
+  }
+
+  main{
+    background-color: #F3F3F3;
+    height: auto;
+    min-height: 800px;
+  }
+
+  .chat{
+    margin-top: 80px;
+    margin-bottom: 80px;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+  .status{
+    margin-bottom:5px;
+    padding: 8px;
+    background-color: #DCDCDC;
+  }
+
+  .reservado{
+    margin-bottom:5px;
+    padding: 8px;
+    background-color: #FFDEDE;
+}
+
+.todos{
+    margin-bottom:5px;
+    padding: 8px;
+    background-color: white;
+}
+
+.hora{
+    color:#AAAAAA;
+    font-weight: 300;
+}
+
+p{
+    word-break: break-all;
+}
+
+footer{
+    height: 80px;
+    width: 650px;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    box-shadow: 0 0 15px -4px rgba(0, 0, 0, 0.25);
+}
+
+.mensagem{
+    display: flex;
+    flex-direction: column;
+}
+
+input{
+    height: 30px;
+    width: 570px;
+    border: none;
+    font-size: 18px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    padding-left: 10px;
+}
+
+input::placeholder{
+    color: black;
+    font-style: italic;
+}
+
+.mensagem p{
+    font-size: 14px;
+    font-weight: 300;
+    padding-left: 20px;
+    color: #505050;
+}
+
+button{
+    border: none;
+}
+
+button:active{
+    cursor: pointer;
+}
+
+.botao{
+    font-size: 26px;
+    margin-right: 20px;
+}
+
+.sidebar {
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    right: 0;
+    background: #fff;
+    width: 210px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    transition: all 600ms linear;
+    overflow-y: scroll;
+  }
+  
+  .sidebar .escondido {
+    right: -210px;
+  }
+  
+  .titulo {
+    text-align: center;
+    margin: 20px 0;
+    padding: 0 5px;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: -0.5px;
+  }
+  
+  .publico {
+    font-size: 14px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+    word-break: break-word;
+  }
+
+.privado {
+    font-size: 14px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+    word-break: break-word;
+  }
+  
+  .check{
+    margin-right: 10px;
+    font-size: 15px;
+    --ionicon-stroke-width : 100px;
+    margin-top: -2px;
+    flex-shrink: 0;
+  }
+
+  .icones {
+    margin-right: 10px;
+    font-size: 25px;
+    margin-top: -2px;
+    flex-shrink: 0;
+  }
+  
+  .check {
+    position: absolute;
+    right: -5px;
+    top: 5px;
+    color: #28BB25;
+    display: none;
+  }
+  
+  .selecionado .check {
+    display: inline;
+  }
+  
+  .fundo {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    transition: all 150ms linear;
+  }
+  
+  .escondido {
+    display: none;
+  }

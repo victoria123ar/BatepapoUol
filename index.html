@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="icon" href="./assets/uol logo.png" />
+    <title>Chat UOL</title>
+  </head>
+  <body>
+    <div class="fundo escondido"></div>
+    <header>
+      <img src="./assets/logo.png" alt="Logo UOL" />
+      <ion-icon class="icone" name="people-sharp"></ion-icon>
+    </header>
+    <main>
+      <div class="chat">
+        <p class="status">
+          <span class="hora">(09:21:45)</span><strong> João</strong> entra na
+          sala...
+        </p>
+        <p class="todos">
+          <span class="hora">(09:22:28)</span><strong> João</strong> para
+          <strong>Todos</strong>: Bom dia
+        </p>
+        <p class="reservado">
+          <span class="hora">(09:22:48)</span
+          ><strong> João</strong> reservadamente para <strong>Maria</strong>: Oi
+          gatinha quer tc?
+        </p>
+      </div>
+    </main>
+    <footer>
+      <div class="mensagem">
+        <input type="text" placeholder="Escreva aqui..."/>
+        <p>Enviando para Maria (reservadamente)</p>
+      </div>
+      <button>
+        <ion-icon class="botao" name="paper-plane-outline"></ion-icon>
+      </button>
+    </footer>
+    <div class="sidebar escondido">
+      <h1 class="titulo">Escolha um contato para enviar mensagem:</h1>
+      <div class="contatos">
+        <div class="publico">
+          <ion-icon class="icones" name="people-sharp"></ion-icon
+          ><span class="nome">Todos</span
+          ><ion-icon class="check" name="checkmark-outline"> </ion-icon>
+        </div>
+        <div class="privado">
+          <ion-icon class="icones" name="person-circle"></ion-icon
+          ><span class="nome">Maria</span
+          ><ion-icon class="check" name="checkmark-outline"> </ion-icon>
+        </div>
+        <div class="privado">
+          <ion-icon class="icones" name="person-circle"></ion-icon
+          ><span class="nome">João</span
+          ><ion-icon class="check" name="checkmark-outline"> </ion-icon>
+        </div>
+      </div>
+      <h1 class="titulo">Escolha a visibilidade:</h1>
+      <div class="visibilidade">
+        <div class="publico">
+          <ion-icon class="icones" name="lock-open"></ion-icon>Público<ion-icon
+            class="check"
+            name="checkmark-outline"
+          >
+          </ion-icon>
+        </div>
+        <div class="privado">
+          <ion-icon class="icones" name="lock-closed"></ion-icon>Reservadamente<ion-icon
+            class="check"
+            name="checkmark-outline"
+          >
+          </ion-icon>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
