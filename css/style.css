@@ -3,13 +3,14 @@
     font-family: 'Roboto', sans-serif;
   }
 
-  .chat{
+  body{
     max-width: 650px;
   }
 
   header{
     height: 80px;
     width:650px;
+    z-index: 1;
     top: 0;
     left: 0;
     position: fixed;
@@ -33,6 +34,7 @@
     background-color: #F3F3F3;
     height: auto;
     min-height: 800px;
+    z-index: 0;
   }
 
   .chat{
@@ -45,25 +47,34 @@
 
   .status{
     margin-bottom:5px;
-    padding: 8px;
+    padding: 12px;
     background-color: #DCDCDC;
   }
 
   .reservado{
     margin-bottom:5px;
-    padding: 8px;
+    padding: 12px;
     background-color: #FFDEDE;
 }
 
 .todos{
     margin-bottom:5px;
-    padding: 8px;
+    padding: 12px;
     background-color: white;
 }
 
 .hora{
     color:#AAAAAA;
     font-weight: 300;
+}
+
+strong{
+  display: inline-block;
+  text-align: bottom;
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 p{
@@ -73,6 +84,7 @@ p{
 footer{
     height: 80px;
     width: 650px;
+    z-index: 1;
     bottom: 0;
     left: 0;
     position: fixed;
@@ -112,6 +124,7 @@ input::placeholder{
 
 button{
     border: none;
+    background-color: #ffff;
 }
 
 button:active{

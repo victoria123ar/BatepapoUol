@@ -3,7 +3,7 @@
     font-family: 'Roboto', sans-serif;
   }
 
-  body{
+  form{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,13 +20,17 @@
     height: 54px;
     border: 1px solid #D7D7D7;
     border-radius: 5px;
-    color: #AEAEAE;
     font-size: 18px;
-    font-weight: 400;
     text-align: center;
     margin-bottom: 20px;
   }
 
+  input::placeholder{
+    color: #AEAEAE;
+    font-size: 18px;
+    font-weight: 400;
+  }
+  
   button:disabled{
     width: 109px;
     height: 45px;
