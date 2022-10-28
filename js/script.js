@@ -1,8 +1,17 @@
 const usuario = localStorage.getItem('usuario');
 
-const mensagem = document.querySelector('.mensagem')
+const mensagem = document.querySelector('.chat')
 
 const botao = document.querySelector('.botao')
+
+document.addEventListener("keypress", function(e) {
+    if(e.key == 'Enter') 
+    {
+        let texto = document.querySelector(".footer input")
+        enviarMensagem(usuario, "Todos", texto.value, "message")
+        texto.value = '';
+    }
+  });
 
   botao.addEventListener("click", function(e) {
     window.location = 'home.html';
@@ -12,7 +21,7 @@ const botao = document.querySelector('.botao')
   });
 
 function atualizarChat(){
-    const mensagemStatus = document.querySelector('.mensagem');
+    const mensagemStatus = document.querySelector('.chat');
     axios.get('https://mock-api.driven.com.br/api/v6/uol/messages')
     .then(response=>{
     for (let mensagem of response.data){
@@ -40,5 +49,18 @@ function atualizarChat(){
     const mensagem = document.querySelector('p:last-child');
     mensagem.scrollIntoView();
 }
+
+function manterConexao(){
+    const url = 'https://mock-api.driven.com.br/api/v6/uol/status'
+    const informacoes = { name: usuario };
+    axios.post(url, informacoes) 
+        .then(response => {
+        })
+        .catch(error => {
+            console.log(`manterConexão: ${error}`)
+        }); 
+}
+
+setInterval(manterConexao, 5000)
 
 setInterval(atualizarChat, 3000)
