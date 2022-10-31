@@ -28,6 +28,7 @@ document.addEventListener("keypress", function (e) {
 
 function atualizarChat() {
   const mensagemStatus = document.querySelector(".chat");
+  const mensagemReservada = document.querySelector('footer')
   axios
     .get("https://mock-api.driven.com.br/api/v6/uol/messages")
     .then((response) => {
@@ -44,7 +45,9 @@ function atualizarChat() {
                             <span class="hora"> ${mensagem.time} 
                             </span><strong> ${mensagem.from}}</strong> reservadamente para <strong>${mensagem.to}</strong>: ${mensagem.text}
                         </p>`;
+            let msg = `<p>Enviando para ${mensagem.to} (reservadamente)</p>`
           mensagemStatus.innerHTML = mensagemStatus.innerHTML + item;
+          mensagemReservada.innerHTML = mensagemReservada + msg;
         }  */else if (mensagem.type == "message") {
           let item = `<p class="todos">
                             <span class="hora"> ${mensagem.time}
