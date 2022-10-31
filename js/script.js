@@ -1,66 +1,97 @@
-const usuario = localStorage.getItem('usuario');
+const usuario = localStorage.getItem("usuario");
 
-const mensagem = document.querySelector('.chat')
+const mensagem = document.querySelector(".chat");
 
-const botao = document.querySelector('.botao')
+const botao = document.querySelector(".botao");
 
-document.addEventListener("keypress", function(e) {
-    if(e.key == 'Enter') 
-    {
-        let texto = document.querySelector(".footer input")
-        enviarMensagem(usuario, "Todos", texto.value, "message")
-        texto.value = '';
+const icone = document.querySelector('.icone');
+
+const cnt = document.querySelector('.nome');
+
+let contato = 'Todos'
+let tipoMensagem = 'message';
+
+icone.addEventListener("click", function () {
+    console.log('cliquei')
+    if(icone.icludes.classList('escondido')){
+        icone.classList.remove('.escondido');
     }
-  });
+});
 
-  botao.addEventListener("click", function(e) {
-    window.location = 'home.html';
-    let texto = document.querySelector(".footer input")
-    enviarMensagem(usuario, "Todos", texto.value, "message")
-        texto.value = '';
-  });
+document.addEventListener("keypress", function (e) {
+  if (e.key == "Enter") {
+    let texto = document.querySelector(".texto");
+    enviarMensagem(usuario, "Todos", texto.value, "message");
+    texto.value = "";
+  }
+});
 
-function atualizarChat(){
-    const mensagemStatus = document.querySelector('.chat');
-    axios.get('https://mock-api.driven.com.br/api/v6/uol/messages')
-    .then(response=>{
-    for (let mensagem of response.data){
-
-        if(mensagem.type == "status")
-        {
-            let item =`<p class="status">
-                            <span class="hora">${mensagem.time}
+function atualizarChat() {
+  const mensagemStatus = document.querySelector(".chat");
+  axios
+    .get("https://mock-api.driven.com.br/api/v6/uol/messages")
+    .then((response) => {
+        console.log('atualizar chat')
+      for (let mensagem of response.data) {
+        if (mensagem.type == "status") {
+          let item = `<p class="status">
+                            <span class="hora"> ${mensagem.time}
                             </span><strong>${mensagem.from}</strong> ${mensagem.text}
                         </p>`;
-            mensagemStatus.innerHTML = mensagemStatus.innerHTML + item;
-        }
-        else if(mensagem.type == "message"){
-            let item = `<p class="todos">
-                            <span class="hora">${mensagem.time}
+          mensagemStatus.innerHTML = mensagemStatus.innerHTML + item;
+        } /* else if (mensagem.type == "message") {
+          let item = `<p class="reservado">
+                            <span class="hora"> ${mensagem.time} 
+                            </span><strong> ${mensagem.from}}</strong> reservadamente para <strong>${mensagem.to}</strong>: ${mensagem.text}
+                        </p>`;
+          mensagemStatus.innerHTML = mensagemStatus.innerHTML + item;
+        }  */else if (mensagem.type == "message") {
+          let item = `<p class="todos">
+                            <span class="hora"> ${mensagem.time}
                             </span><strong>${mensagem.from}</strong> para<strong>${mensagem.to}</strong>: ${mensagem.text}
                         </p>`;
-            mensagemStatus.innerHTML = mensagemStatus.innerHTML + item;
+          mensagemStatus.innerHTML = mensagemStatus.innerHTML + item;
         }
-    }
+      }
     })
-    .catch(error => {
-        console.log(`atualizarChat: ${error}`)
-    }); 
-    const mensagem = document.querySelector('p:last-child');
-    mensagem.scrollIntoView();
+    .catch((error) => {
+      console.log(`atualizarChat: ${error}`);
+    });
+  const mensagem = document.querySelector(".chat p:last-child");
+  mensagem.scrollIntoView();
 }
 
-function manterConexao(){
-    const url = 'https://mock-api.driven.com.br/api/v6/uol/status'
-    const informacoes = { name: usuario };
-    axios.post(url, informacoes) 
-        .then(response => {
-        })
-        .catch(error => {
-            console.log(`manterConexão: ${error}`)
-        }); 
+function manterConexao() {
+  const url = "https://mock-api.driven.com.br/api/v6/uol/status";
+  const informacoes = { name: usuario };
+  axios
+    .post(url, informacoes)
+    .then((response) => 
+    {
+            console.log('manter conexão')
+    })
+    .catch((error) => 
+    {
+        console.log(error)
+    window.location = "home.html";
+    });
 }
 
-setInterval(manterConexao, 5000)
+function enviarMensagem(quem, para, texto, tipo) {
+  const url = "https://mock-api.driven.com.br/api/v6/uol/messages";
 
-setInterval(atualizarChat, 3000)
+  const informacoes = { from: quem, to: para, text: texto, type: tipo };
+  console.log(informacoes);
+  axios
+    .post(url, informacoes)
+    .then((response) => {
+      atualizarChat()
+    })
+    .catch((error) => {
+      console.log(`enviarMensagem: ${error}`);
+    });
+}
+
+setInterval(manterConexao, 5000);
+
+setInterval(atualizarChat, 3000);

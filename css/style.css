@@ -71,14 +71,14 @@
 strong{
   display: inline-block;
   text-align: bottom;
-  max-width: 150px;
+  max-width: 110px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
 p{
-    word-break: break-all;
+    word-wrap: break-word;
 }
 
 footer{
