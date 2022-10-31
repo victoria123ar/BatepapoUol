@@ -97,4 +97,4 @@ function enviarMensagem(quem, para, texto, tipo) {
 
 setInterval(manterConexao, 5000);
 
-setInterval(atualizarChat, 3000);
+setInterval(atualizarChat, 1000);
