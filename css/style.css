@@ -71,6 +71,7 @@ main {
 strong {
   display: inline-block;
   text-align: bottom;
+  vertical-align: bottom;
   max-width: 110px;
   overflow: hidden;
   text-overflow: ellipsis;

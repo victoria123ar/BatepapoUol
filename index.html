@@ -19,50 +19,50 @@
     <div class="fundo escondido"></div>
     <header>
       <img src="./assets/logo.png" alt="Logo UOL" />
-      <ion-icon class="icone" name="people-sharp"></ion-icon>
+      <ion-icon data-test="open-participants" class="icone" name="people-sharp"></ion-icon>
     </header>
     <main>
       <div class="chat"></div>
     </main>
     <footer>
       <div class="mensagem">
-        <input type="text" placeholder="Escreva aqui..." class ='texto'/>
+        <input data-test="input-message" type="text" placeholder="Escreva aqui..." class ='texto'/>
       </div>
       <button>
-        <ion-icon class="botao" name="paper-plane-outline"></ion-icon>
+        <ion-icon data-test="send-message" class="botao" name="paper-plane-outline"></ion-icon>
       </button>
     </footer>
     <div class="sidebar escondido">
       <h1 class="titulo">Escolha um contato para enviar mensagem:</h1>
       <div class="contatos">
-        <div class="publico">
+        <div class="publico" data-test="all">
           <ion-icon class="icones" name="people-sharp"></ion-icon
           ><span class="nome">Todos</span
-          ><ion-icon class="check" name="checkmark-outline"> </ion-icon>
+          ><ion-icon data-test="check" class="check" name="checkmark-outline"> </ion-icon>
         </div>
-        <div class="privado">
+        <div class="privado" data-test="participant">
           <ion-icon class="icones" name="person-circle"></ion-icon
           ><span class="nome">Maria</span
-          ><ion-icon class="check" name="checkmark-outline"> </ion-icon>
+          ><ion-icon data-test="check" class="check" name="checkmark-outline"> </ion-icon>
         </div>
-        <div class="privado">
+        <div class="privado" data-test="participant">
           <ion-icon class="icones" name="person-circle"></ion-icon
           ><span class="nome">João</span
-          ><ion-icon class="check" name="checkmark-outline"> </ion-icon>
+          ><ion-icon data-test="check" class="check" name="checkmark-outline"> </ion-icon>
         </div>
       </div>
       <h1 class="titulo">Escolha a visibilidade:</h1>
       <div class="visibilidade">
-        <div class="publico">
-          <ion-icon class="icones" name="lock-open"></ion-icon>Público<ion-icon
+        <div class="publico" data-test="public">
+          <ion-icon data-test="check" class="icones" name="lock-open"></ion-icon>Público<ion-icon
             class="check"
             name="checkmark-outline"
           >
           </ion-icon>
         </div>
-        <div class="privado">
+        <div class="privado" data-test="private">
           <ion-icon class="icones" name="lock-closed"></ion-icon
-          >Reservadamente<ion-icon class="check" name="checkmark-outline">
+          >Reservadamente<ion-icon data-test="check" class="check" name="checkmark-outline">
           </ion-icon>
         </div>
       </div>
