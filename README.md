@@ -11,9 +11,7 @@ O Bate-Papo UOL é uma aplicação de bate-papo em tempo real, onde os usuários
 O Bate-Papo UOL oferece os seguintes recursos:
 
 - Registro de usuário com nome de usuário único.
-- Entrada em salas de chat específicas.
 - Envio e recebimento de mensagens em tempo real.
-- Lista de usuários online na sala de chat.
 - Notificações de entrada e saída de usuários.
 
 ## Tecnologias Utilizadas
