@@ -28,11 +28,9 @@ Para executar o projeto em sua máquina local, siga estas etapas:
 1. Certifique-se de ter o NodeJs e o npm instalados em seu sistema.
 2. Clone este repositório para sua máquina:
 **git clone https://github.com/victoria123ar/BatepapoUol.git**
-3. Navegue até o diretório do projeto:
-**cd bate-papo-uol**
-4. Instale as dependências do projeto:
+3. Instale as dependências do projeto:
 **npm install**
-5. Inicie o servidor de desenvolvimento:
+4. Inicie o servidor de desenvolvimento:
 **npm start**
 
 ## Autor
