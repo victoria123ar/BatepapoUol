@@ -35,4 +35,4 @@ Para executar o projeto em sua máquina local, siga estas etapas:
 
 ## Autor
 
-Este projeto foi desenvolvido por Victoria (https://github.com/victoria123ar).
+Este projeto foi desenvolvido por [Victoria](https://github.com/victoria123ar).
